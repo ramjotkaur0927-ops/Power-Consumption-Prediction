@@ -169,11 +169,11 @@ This helped provide additional insights into the factors associated with power d
 
 ---
 
-## 📂 Project Files
+- ## 📂 Project Files
 
 - 📓 [Jupyter Notebook](./Power_Consumption_Prediction.ipynb)
-- 📊 [Project Presentation](./Power_Consumption_Prediction%20%20.pptx)
-
+- 📊 [PowerPoint Presentation](./Power_Consumption_Prediction.pptx)
+- 📁 [Dataset](./powerconsumption.csv)
 > Note: The presentation filename contains spaces. You can rename it on GitHub to `Power_Consumption_Prediction.pptx` to make the link cleaner.
 
 ---
