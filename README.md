@@ -6,25 +6,23 @@ This project focuses on predicting **electricity consumption in Zone 3** using h
 
 The project was completed as part of a Machine Learning project with **First Quadrant Labs**.
 
-The main objective was to perform an end-to-end Machine Learning workflow, from data understanding and exploratory data analysis to feature engineering, model building, evaluation, and selection of the best-performing regression model.
+The goal was to build and compare regression models and identify the best-performing model for predicting Zone 3 power consumption.
 
 ---
 
-## 🎯 Objective
+## 🎯 Business Problem
 
-The objective of this project is to predict:
-
-**`PowerConsumption_Zone3`**
-
-using historical electricity consumption, weather-related variables, and time-based features.
-
-Accurate power consumption prediction can support:
+Accurate electricity consumption prediction can help organizations improve:
 
 - Energy management
-- Demand forecasting
 - Resource planning
 - Electricity distribution
-- Operational decision-making
+- Demand forecasting
+- Operational efficiency
+
+Power consumption can be influenced by factors such as weather conditions, time of day, day of the week, and historical electricity usage.
+
+This project uses these factors to develop a predictive Machine Learning model.
 
 ---
 
@@ -32,13 +30,10 @@ Accurate power consumption prediction can support:
 
 The dataset contains:
 
-| Information | Details |
-|---|---|
-| Records | **12,321** |
-| Original Features | **9** |
-| Modeling Features | **13** |
-| Target Variable | `PowerConsumption_Zone3` |
-| Missing Values | **No missing values** |
+- **12,321 records**
+- **9 original features**
+- **13 features used for modeling after feature engineering**
+- **Target Variable:** `PowerConsumption_Zone3`
 
 ### Original Features
 
@@ -60,12 +55,12 @@ The dataset contains:
 
 The following steps were performed:
 
-- Dataset structure and data types were examined
-- Missing values were checked
-- Duplicate records were checked
-- `Datetime` was converted into datetime format
-- Data was prepared for exploratory analysis
-- Features were prepared for Machine Learning
+- Examined the dataset structure
+- Checked data types
+- Checked missing values
+- Checked duplicate records
+- Converted the `Datetime` column into datetime format
+- Prepared the data for exploratory analysis and Machine Learning
 
 The dataset contained **no missing values**.
 
@@ -73,7 +68,7 @@ The dataset contained **no missing values**.
 
 ## ⚙️ Feature Engineering
 
-The `Datetime` feature was used to create additional time-based features:
+Time-based features were extracted from the `Datetime` column:
 
 - `Year`
 - `Month`
@@ -82,7 +77,7 @@ The `Datetime` feature was used to create additional time-based features:
 - `DayOfWeek`
 - `Weekend`
 
-These features help the models capture temporal patterns in electricity consumption.
+These features helped capture temporal patterns in electricity consumption.
 
 ---
 
@@ -90,52 +85,34 @@ These features help the models capture temporal patterns in electricity consumpt
 
 Exploratory Data Analysis was performed to understand:
 
-- Distribution of power consumption
-- Power consumption patterns over time
-- Relationships between weather variables and electricity consumption
-- Correlations between numerical variables
-- Relationships between input variables and the target variable
+- Power consumption distributions
+- Consumption patterns over time
+- Relationships between weather variables and power consumption
+- Correlations between numerical features
+- Relationships between input variables and the target
 
-### Visualization Libraries
+### Visualization Tools
 
 - Matplotlib
 - Seaborn
 
 ---
 
-## 🤖 Machine Learning
+## 🤖 Machine Learning Models
 
-Three regression algorithms were developed and compared:
+Three regression models were developed and compared:
 
-### 1. Linear Regression
+1. **Linear Regression**
+2. **Decision Tree Regressor**
+3. **Random Forest Regressor**
 
-Used as a baseline regression model.
+### Evaluation Metrics
 
-### 2. Decision Tree Regressor
+The models were evaluated using:
 
-Used to capture non-linear relationships between features and power consumption.
-
-### 3. Random Forest Regressor
-
-An ensemble learning model used to improve prediction accuracy and capture complex relationships within the data.
-
----
-
-## 📏 Model Evaluation
-
-The models were evaluated using three metrics:
-
-### MAE — Mean Absolute Error
-
-Measures the average absolute difference between actual and predicted values.
-
-### RMSE — Root Mean Squared Error
-
-Measures prediction error while giving greater weight to larger errors.
-
-### R² Score
-
-Measures how much of the variation in the target variable is explained by the model.
+- **MAE — Mean Absolute Error**
+- **RMSE — Root Mean Squared Error**
+- **R² Score**
 
 ---
 
@@ -144,68 +121,60 @@ Measures how much of the variation in the target variable is explained by the mo
 | Model | MAE | RMSE | R² Score |
 |---|---:|---:|---:|
 | Linear Regression | 1209.87 | 1493.89 | 0.8786 |
-| Decision Tree Regressor | 366.97 | 586.83 | 0.9813 |
-| **Random Forest Regressor** | **259.94** | **395.67** | **0.9915** |
+| Decision Tree | 366.97 | 586.83 | 0.9813 |
+| **Random Forest** | **259.94** | **395.67** | **0.9915** |
 
-### 🥇 Best Model
+### 🥇 Best Model: Random Forest Regressor
 
-**Random Forest Regressor**
-
-Performance:
+The Random Forest model achieved:
 
 - **MAE:** 259.94
 - **RMSE:** 395.67
 - **R² Score:** 0.9915
 
-The Random Forest model achieved the best performance among the evaluated models.
+The model explained approximately **99.15% of the variance** in the test-set target values.
 
 ---
 
 ## 🔎 Feature Importance
 
-Feature importance was analyzed using the Random Forest model to identify the variables that contributed most to predicting Zone 3 electricity consumption.
+Feature importance was analyzed using the Random Forest model to understand which variables contributed most to predicting Zone 3 electricity consumption.
 
-This provides useful insight into the factors associated with electricity demand.
+This helped provide additional insights into the factors associated with power demand.
 
 ---
 
 ## 📈 Key Findings
 
-- Time-based features helped capture temporal consumption patterns.
+- Time-based features helped capture consumption patterns.
 - Tree-based models performed better than Linear Regression.
-- Random Forest achieved the highest predictive performance.
+- Random Forest achieved the best overall predictive performance.
 - Historical power consumption variables provided important predictive information.
-- Feature importance analysis helped identify important predictors of Zone 3 consumption.
+- Feature importance analysis helped identify the variables most useful for prediction.
 
 ---
 
-## 🛠️ Technologies & Tools
+## 🛠️ Technologies Used
 
-**Programming & Analysis**
 - Python
 - Pandas
 - NumPy
-
-**Visualization**
 - Matplotlib
 - Seaborn
-
-**Machine Learning**
 - Scikit-learn
-- Regression
-- Model Evaluation
-- Feature Importance
-
-**Development Environment**
 - Jupyter Notebook
+- Machine Learning
+- Exploratory Data Analysis
+- Feature Engineering
 
 ---
 
 ## 📂 Project Files
 
 - 📓 [Jupyter Notebook](./Power_Consumption_Prediction.ipynb)
-- 📊 [PowerPoint Presentation](./Power_Consumption_Prediction.pptx)
-- 📁 [Dataset](./dataset/powerconsumption.csv)
+- 📊 [Project Presentation](./Power_Consumption_Prediction%20%20.pptx)
+
+> Note: The presentation filename contains spaces. You can rename it on GitHub to `Power_Consumption_Prediction.pptx` to make the link cleaner.
 
 ---
 
@@ -223,23 +192,20 @@ Power-Consumption-Prediction/
 
 ## 🎓 Skills Demonstrated
 
-Data Analysis
 Data Cleaning
 Exploratory Data Analysis
 Data Visualization
 Feature Engineering
-Machine Learning
 Regression
+Machine Learning
 Model Evaluation
 Feature Importance
-Python
-Pandas
-NumPy
-Scikit-learn
+Python Programming
+Business-oriented Data Analysis
 
 👩‍💻 Author
 Ramjot Kaur
 Aspiring Data Analyst with hands-on experience in:
 Python | SQL | Excel | Tableau | Power BI | Machine Learning | Data Visualization
-🔗 Connect With Me
-💼 LinkedIn – Ramjot Kaur
+Project: Power Consumption Prediction in Zone 3
+Organization: First Quadrant Labs
